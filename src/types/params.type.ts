@@ -92,6 +92,8 @@ export type LoginOptions = {
    * @default false */
   return_scopes?: boolean;
 
+  override_default_response_type?: boolean;
+
   /** When true, prompt the user to grant permission for one or more Pages */
   enable_profile_selector?: boolean;
 
@@ -104,6 +106,10 @@ export type LoginOptions = {
   /** When true, errors catched for window.FB.login() will be ignored
    *  @default false */
   ignoreSdkError?: boolean;
+
+  extras?: {
+    setup?: any;
+  };
 };
 
 export type FacebookLoginProps = Pick<InitParams, 'appId'> & {

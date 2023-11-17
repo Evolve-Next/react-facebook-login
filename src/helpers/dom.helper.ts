@@ -12,6 +12,9 @@ export const createScriptEle = (id: string, src: string) => {
     const js: HTMLScriptElement = document.createElement('script');
     js.id = id;
     js.src = src;
+    js.async = true;
+    js.defer = true;
+    js.crossOrigin = 'anonymous';
     js.onload = resolve;
 
     if (fjs) {
