@@ -1,5 +1,5 @@
 {
-  "name": "@greatsumini/react-facebook-login",
+  "name": "@es/react-facebook-login",
   "version": "3.3.3",
   "keywords": [
     "react",
@@ -21,16 +21,15 @@
     "prepublish:npm": "npm run check && npm run build",
     "publish:npm": "npm publish --public"
   },
-  "author": "greatSumini <greatSumini@gmail.com> (https://sumini.dev)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/greatSumini/react-facebook-login.git"
+    "url": "git+https://github.com/Evolve-Next/react-facebook-login.git"
   },
   "bugs": {
-    "url": "https://github.com/greatSumini/react-facebook-login/issues"
+    "url": "https://github.com/Evolve-Next/react-facebook-login/issues"
   },
-  "homepage": "https://github.com/greatSumini/react-facebook-login",
+  "homepage": "https://github.com/Evolve-Next/react-facebook-login",
   "peerDependencies": {
     "react": "^16.0.0 || ^17.0.0 || ^18.0.0"
   },

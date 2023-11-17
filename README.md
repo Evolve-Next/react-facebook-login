@@ -3,9 +3,9 @@
 [![NPM version](https://img.shields.io/npm/v/@greatsumini/react-facebook-login)](https://www.npmjs.com/package/@greatsumini/react-facebook-login)
 [![NPM downloads](https://img.shields.io/npm/dm/@greatsumini/react-facebook-login)](https://www.npmjs.com/package/@greatsumini/react-facebook-login)
 [![NPM bundle size](https://img.shields.io/bundlephobia/min/@greatsumini/react-facebook-login)](https://www.npmjs.com/package/@greatsumini/react-facebook-login)
-[![CI](https://img.shields.io/github/actions/workflow/status/greatsumini/react-facebook-login/ci.yml?label=CI)](https://github.com/greatSumini/react-facebook-login/actions/workflows/ci.yml)
-[![CD](https://img.shields.io/github/actions/workflow/status/greatsumini/react-facebook-login/npm-publish.yml?label=CD)](https://github.com/greatSumini/react-facebook-login/actions/workflows/cd.yml)
-[![GitHub Stars](https://img.shields.io/github/stars/greatSumini/react-facebook-login?style=social)](https://github.com/greatSumini/react-facebook-login)
+[![CI](https://img.shields.io/github/actions/workflow/status/greatsumini/react-facebook-login/ci.yml?label=CI)](https://github.com/Evolve-Next/react-facebook-login/actions/workflows/ci.yml)
+[![CD](https://img.shields.io/github/actions/workflow/status/greatsumini/react-facebook-login/npm-publish.yml?label=CD)](https://github.com/Evolve-Next/react-facebook-login/actions/workflows/cd.yml)
+[![GitHub Stars](https://img.shields.io/github/stars/greatSumini/react-facebook-login?style=social)](https://github.com/Evolve-Next/react-facebook-login)
 
 <br/>
 
@@ -150,7 +150,7 @@ Check all available params,options [here](./docs/params.md)
 | children         | Children Component                               | ReactNode \| ReactNodeArray | "Login with Facebook"                                                                                         |
 | render           | Callback which render custom component           | function                    | -                                                                                                             |
 | autoLoad         | if true, request login on mount                  | boolean                     | false                                                                                                         |
-| useRedirect      | if true, use redirect instead of window.FB.login | boolean                     | false (forced to be true in fb browers ([ref](https://github.com/greatSumini/react-facebook-login/issues/2))) |
+| useRedirect      | if true, use redirect instead of window.FB.login | boolean                     | false (forced to be true in fb browers ([ref](https://github.com/Evolve-Next/react-facebook-login/issues/2))) |
 | useCustomChat    | if true, append 'xfbml.customerchat' to sdk url  | boolean                     | false                                                                                                         |
 | initParams       | params for FB.init                               | InitParams                  | [docs](./docs/params.md)                                                                                      |
 | dialogParams     | params for login dialog                          | DialogParams                | [docs](./docs/params.md)                                                                                      |
@@ -169,5 +169,5 @@ React Facebook Login is [MIT licensed](./LICENSE).
 ## Links
 
 - [NPM](https://www.npmjs.com/package/@greatsumini/react-facebook-login)
-- [GitHub](https://github.com/greatSumini/react-facebook-login)
+- [GitHub](https://github.com/Evolve-Next/react-facebook-login)
 - [(Official) Facebook Login Guide](https://developers.facebook.com/docs/facebook-login/web)
