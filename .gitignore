@@ -5,4 +5,5 @@ storybook-static
 .vscode
 renovate.json
 .idea/
+package-lock.json
 *.lock
