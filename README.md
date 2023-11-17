@@ -1,8 +1,8 @@
-# React Facebook Login
+# React Fb Login
 
-[![NPM version](https://img.shields.io/npm/v/@greatsumini/react-facebook-login)](https://www.npmjs.com/package/@greatsumini/react-facebook-login)
-[![NPM downloads](https://img.shields.io/npm/dm/@greatsumini/react-facebook-login)](https://www.npmjs.com/package/@greatsumini/react-facebook-login)
-[![NPM bundle size](https://img.shields.io/bundlephobia/min/@greatsumini/react-facebook-login)](https://www.npmjs.com/package/@greatsumini/react-facebook-login)
+[![NPM version](https://img.shields.io/npm/v/react-fb-login)](https://www.npmjs.com/package/react-fb-login)
+[![NPM downloads](https://img.shields.io/npm/dm/react-fb-login)](https://www.npmjs.com/package/react-fb-login)
+[![NPM bundle size](https://img.shields.io/bundlephobia/min/react-fb-login)](https://www.npmjs.com/package/react-fb-login)
 [![CI](https://img.shields.io/github/actions/workflow/status/greatsumini/react-facebook-login/ci.yml?label=CI)](https://github.com/Evolve-Next/react-facebook-login/actions/workflows/ci.yml)
 [![CD](https://img.shields.io/github/actions/workflow/status/greatsumini/react-facebook-login/npm-publish.yml?label=CD)](https://github.com/Evolve-Next/react-facebook-login/actions/workflows/cd.yml)
 [![GitHub Stars](https://img.shields.io/github/stars/greatSumini/react-facebook-login?style=social)](https://github.com/Evolve-Next/react-facebook-login)
@@ -19,22 +19,24 @@ React Component for Facebook Login. aims to improve [react-facebook-login](https
 
 ## Table of contents
 
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-  - [Component](#component)
-  - [FacebookLoginClient](#facebookloginclient)
-- [Examples](#examples)
-- [Props](#props)
-- [Stay in touch](#stay-in-touch)
-- [License](#license)
-- [Links](#links)
+- [React Fb Login](#react-fb-login)
+  - [Table of contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+  - [Usage](#usage)
+    - [Component](#component)
+    - [FacebookLoginClient](#facebookloginclient)
+  - [Examples](#examples)
+  - [Props](#props)
+  - [Stay in touch](#stay-in-touch)
+  - [License](#license)
+  - [Links](#links)
 
 ## Getting Started
 
 ```shell
-npm i --save @greatsumini/react-facebook-login
+npm i --save react-fb-login
 # or
-yarn add @greatsumini/react-facebook-login
+yarn add react-fb-login
 ```
 
 ## Usage
@@ -42,7 +44,7 @@ yarn add @greatsumini/react-facebook-login
 ### Component
 
 ```tsx
-import FacebookLogin from '@greatsumini/react-facebook-login';
+import FacebookLogin from 'react-fb-login';
 
 // default
 <FacebookLogin
@@ -110,7 +112,7 @@ import FacebookLogin from '@greatsumini/react-facebook-login';
 You can manually call facebook sdk related functions with FacebookLoginClient
 
 ```tsx
-import { FacebookLoginClient } from '@greatsumini/react-facebook-login';
+import { FacebookLoginClient } from 'react-fb-login';
 
 FacebookLoginClient.getLoginStatus((res) => {
   console.log(res.status);
@@ -168,6 +170,6 @@ React Facebook Login is [MIT licensed](./LICENSE).
 
 ## Links
 
-- [NPM](https://www.npmjs.com/package/@greatsumini/react-facebook-login)
+- [NPM](https://www.npmjs.com/package/react-fb-login)
 - [GitHub](https://github.com/Evolve-Next/react-facebook-login)
 - [(Official) Facebook Login Guide](https://developers.facebook.com/docs/facebook-login/web)
