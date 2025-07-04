@@ -10,22 +10,22 @@ import {
 import { FacebookLoginClient } from './facebook-login.client';
 import { isFacebookApp } from './helpers';
 
-export default function FacebookLogin(props: FacebookLoginProps) {
+const FacebookLogin: React.FC<FacebookLoginProps> = (props) => {
   const {
     appId,
-    language = 'en_US',
-    scope = 'public_profile, email',
-    fields = 'name,email,picture',
-    onSuccess,
-    onFail,
-    onProfileSuccess,
-    className,
     style,
-    children = 'Login with Facebook',
+    onFail,
     render,
+    onSuccess,
+    className,
     autoLoad = false,
+    onProfileSuccess,
+    language = 'en_US',
     useRedirect = false,
     useCustomerChat = false,
+    fields = 'name,email,picture',
+    scope = 'public_profile, email',
+    children = 'Login with Facebook',
   } = props;
 
   const initParams: InitParams = {
@@ -124,3 +124,5 @@ export default function FacebookLogin(props: FacebookLoginProps) {
     </button>
   );
 }
+
+export default FacebookLogin;

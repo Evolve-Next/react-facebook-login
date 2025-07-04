@@ -47,7 +47,7 @@ export const FacebookLoginClient = {
     const params = paramsToObject(window.location.search);
 
     return (
-      (params['state'] === dialogParams?.state ?? 'facebookdirect') &&
+      (params['state'] === (dialogParams?.state ?? 'facebookdirect')) &&
       params[dialogParams?.response_type ?? ''] !== undefined
     );
   },
