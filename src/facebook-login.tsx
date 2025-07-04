@@ -29,7 +29,7 @@ export default function FacebookLogin(props: FacebookLoginProps) {
   } = props;
 
   const initParams: InitParams = {
-    version: 'v9.0',
+    version: 'v17.0',
     xfbml: false,
     cookie: false,
     localStorage: true,
@@ -116,9 +116,9 @@ export default function FacebookLogin(props: FacebookLoginProps) {
   return (
     <button
       type="button"
-      onClick={handleButtonClick}
-      className={className}
       style={style}
+      className={className}
+      onClick={handleButtonClick}
     >
       {children}
     </button>

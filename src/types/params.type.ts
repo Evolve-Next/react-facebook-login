@@ -30,7 +30,22 @@ export type InitParams = {
     | 'v18.0'
     | 'v19.0'
     | 'v20.0'
-    | 'v21.0';
+    | 'v21.0'
+    | 'v22.0'
+    | 'v23.0'
+    | 'v24.0'
+    | 'v25.0'
+    | 'v26.0'
+    | 'v27.0'
+    | 'v28.0'
+    | 'v29.0'
+    | 'v30.0'
+    | 'v31.0'
+    | 'v32.0'
+    | 'v33.0'
+    | 'v34.0'
+    | 'v35.0'
+    | 'v36.0';
 
   /** Determines whether a cookie is created for the session or not. If enabled, it can be accessed by server-side code.
    * @default false */
@@ -112,7 +127,10 @@ export type LoginOptions = {
   ignoreSdkError?: boolean;
 
   extras?: {
-    setup?: any;
+    version?: 'v1' | 'v2' | 'v3' | 'v4' | 'v5';
+    featureType?: string;
+    features?: { name: string }[];
+    setup?: unknown;
   };
 };
 
