@@ -128,6 +128,7 @@ export type LoginOptions = {
 
   extras?: {
     version?: 'v1' | 'v2' | 'v3' | 'v4' | 'v5';
+    sessionInfoVersion?: string;
     featureType?: string;
     features?: { name: string }[];
     setup?: unknown;
