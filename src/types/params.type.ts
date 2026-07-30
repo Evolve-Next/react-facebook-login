@@ -127,11 +127,14 @@ export type LoginOptions = {
   ignoreSdkError?: boolean;
 
   extras?: {
-    version?: 'v1' | 'v2' | 'v3' | 'v4' | 'v5';
+    version?: string;
     sessionInfoVersion?: string;
     featureType?: string;
+    feature?: string;
     features?: { name: string }[];
-    setup?: unknown;
+    setup?: {
+      solutionID: string;
+    };
   };
 };
 
