@@ -9,6 +9,32 @@ import {
 
 export const SDK_SCRIPT_ELE_ID = 'facebook-jssdk';
 
+/** Normalizes the pre-encoded '%20' form to the space form — the JS SDK
+ * URL-encodes option values itself, so 'code%20token' would be sent
+ * double-encoded as 'code%2520token'. */
+const normalizeResponseType = (options: LoginOptions): LoginOptions =>
+  options.response_type === 'code%20token'
+    ? { ...options, response_type: 'code token' }
+    : options;
+
+/** With `override_default_response_type` enabled, the JS SDK forwards
+ * `response_type` to the OAuth dialog verbatim, so a lone 'code' never yields
+ * an access token. Upgrade 'code' to the combined 'code token' value so
+ * `authResponse` carries the authorization `code` together with `accessToken`
+ * and `userID`. */
+const withAccessToken = (options: LoginOptions): LoginOptions => {
+  const normalized = normalizeResponseType(options);
+
+  if (
+    normalized.override_default_response_type === true &&
+    normalized.response_type === 'code'
+  ) {
+    return { ...normalized, response_type: 'code token' };
+  }
+
+  return normalized;
+};
+
 export const FacebookLoginClient = {
   getFB: () => {
     if (!window.FB) {
@@ -67,7 +93,7 @@ export const FacebookLoginClient = {
     window.location.href = `https://www.facebook.com/dialog/oauth${objectToParams(
       {
         ...dialogParams,
-        ...loginOptions,
+        ...withAccessToken(loginOptions),
       }
     )}`;
   },
@@ -76,7 +102,7 @@ export const FacebookLoginClient = {
     { ignoreSdkError, ...loginOptions }: LoginOptions
   ) {
     try {
-      this.getFB()?.login(callback, loginOptions);
+      this.getFB()?.login(callback, withAccessToken(loginOptions));
     } catch (e) {
       if (ignoreSdkError) {
         return;

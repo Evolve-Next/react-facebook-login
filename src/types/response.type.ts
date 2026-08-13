@@ -30,6 +30,12 @@ export type SuccessResponse = {
 
   /** The ID of the person using your webpage. */
   userID: string;
+
+  /** An authorization code returned when `response_type` includes 'code'. */
+  code?: string;
+
+  /** Comma-separated list of granted scopes, returned when `return_scopes` is true. */
+  grantedScopes?: string;
 };
 
 export type FailResponse = { 

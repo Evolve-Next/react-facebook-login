@@ -14,7 +14,7 @@ export type InitParams = {
   /** Determines which versions of the Graph API and any API dialogs or plugins are invoked
    *
    * (available versions: https://developers.facebook.com/docs/graph-api/changelog)
-   * @default 'v9.0' */
+   * @default 'v17.0' */
   version?:
     | 'v7.0'
     | 'v8.0'
@@ -69,6 +69,19 @@ export type InitParams = {
   hideFlashCallback?: () => void;
 };
 
+/** The type of the response returned from the login dialog.
+ *
+ * This can be one of ('code', 'token', 'code token', 'code%20token', 'granted_scopes')
+ *
+ * Note: the JS SDK URL-encodes values before opening the dialog, so the space form
+ * ('code token') is what the SDK expects — it is sent as 'code%20token'. */
+export type ResponseType =
+  | 'code'
+  | 'token'
+  | 'code token'
+  | 'code%20token'
+  | 'granted_scopes';
+
 export type DialogParams = {
   /** same as appId */
   client_id: string;
@@ -83,9 +96,9 @@ export type DialogParams = {
 
   /** Determines whether the response data included when the redirect back to the app occurs is in URL parameters or fragments.
    *
-   * This can be one of ('code', 'token', 'code%20token', 'grated_scopes')
+   * This can be one of ('code', 'token', 'code token', 'code%20token', 'granted_scopes')
    * @default 'code' */
-  response_type?: string;
+  response_type?: ResponseType;
 
   /** Comma seperated list of permissions to request during login.
    *
@@ -100,7 +113,11 @@ export type LoginOptions = {
    * Use 'rerequest' when re-requesting a declined permission. */
   auth_type?: 'rerequest' | 'reauthenticate' | 'reauthorize';
 
-  response_type?: string;
+  /** The type of the response returned from the login dialog.
+   *
+   * When `override_default_response_type` is true, a lone 'code' is upgraded to
+   * 'code token' so authResponse also contains accessToken and userID. */
+  response_type?: ResponseType;
 
   scope: string;
 
