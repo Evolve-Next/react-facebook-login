@@ -22,3 +22,10 @@ export interface FB {
     callback: (res: unknown) => void
   ) => void;
 }
+
+declare global {
+  interface Window {
+    FB: FB | null;
+    fbAsyncInit: (() => void) | undefined;
+  }
+}

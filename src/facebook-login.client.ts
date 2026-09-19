@@ -17,24 +17,6 @@ const normalizeResponseType = (options: LoginOptions): LoginOptions =>
     ? { ...options, response_type: 'code token' }
     : options;
 
-/** With `override_default_response_type` enabled, the JS SDK forwards
- * `response_type` to the OAuth dialog verbatim, so a lone 'code' never yields
- * an access token. Upgrade 'code' to the combined 'code token' value so
- * `authResponse` carries the authorization `code` together with `accessToken`
- * and `userID`. */
-const withAccessToken = (options: LoginOptions): LoginOptions => {
-  const normalized = normalizeResponseType(options);
-
-  if (
-    normalized.override_default_response_type === true &&
-    normalized.response_type === 'code'
-  ) {
-    return { ...normalized, response_type: 'code token' };
-  }
-
-  return normalized;
-};
-
 export const FacebookLoginClient = {
   getFB: () => {
     if (!window.FB) {
@@ -93,7 +75,7 @@ export const FacebookLoginClient = {
     window.location.href = `https://www.facebook.com/dialog/oauth${objectToParams(
       {
         ...dialogParams,
-        ...withAccessToken(loginOptions),
+        ...normalizeResponseType(loginOptions),
       }
     )}`;
   },
@@ -102,7 +84,7 @@ export const FacebookLoginClient = {
     { ignoreSdkError, ...loginOptions }: LoginOptions
   ) {
     try {
-      this.getFB()?.login(callback, withAccessToken(loginOptions));
+      this.getFB()?.login(callback, normalizeResponseType(loginOptions));
     } catch (e) {
       if (ignoreSdkError) {
         return;

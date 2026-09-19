@@ -11,25 +11,25 @@ export type LoginResponse = {
 
 export type SuccessResponse = {
   /** An access token for the person using the webpage. */
-  accessToken: string;
+  accessToken?: string;
 
   /**
    * A UNIX time stamp when the token expires. Once the token expires, the person will need to login again.
    */
-  expiresIn: string;
+  expiresIn?: string;
 
   /**
    * The amount of time before the login expires, in seconds, and the person will need to login again.
    */
-  reauthorize_required_in: string;
+  reauthorize_required_in?: string;
 
   /**
    * A signed parameter that contains information about the person using your webpage.
    */
-  signedRequest: string;
+  signedRequest?: string;
 
   /** The ID of the person using your webpage. */
-  userID: string;
+  userID?: string;
 
   /** An authorization code returned when `response_type` includes 'code'. */
   code?: string;

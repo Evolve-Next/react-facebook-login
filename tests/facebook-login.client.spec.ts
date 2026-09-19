@@ -1,10 +1,10 @@
 import { FacebookLoginClient } from '../src/facebook-login.client';
-import { LoginOptions } from '../src/types';
+import { FB, LoginOptions } from '../src/types';
 
 const login = jest.fn();
 
 beforeAll(() => {
-  window.FB = { login } as never;
+  window.FB = { login } as unknown as FB;
 });
 
 beforeEach(() => {
@@ -14,7 +14,7 @@ beforeEach(() => {
 const loginWith = (options: LoginOptions) =>
   FacebookLoginClient.login(jest.fn(), options);
 
-test('requests an access token alongside code when override_default_response_type is true', () => {
+test('preserves response_type code when override_default_response_type is true', () => {
   loginWith({
     scope: 'business_management',
     config_id: '1616820273166112',
@@ -25,7 +25,7 @@ test('requests an access token alongside code when override_default_response_typ
   expect(login).toHaveBeenCalledWith(
     expect.any(Function),
     expect.objectContaining({
-      response_type: 'code token',
+      response_type: 'code',
       override_default_response_type: true,
     })
   );
